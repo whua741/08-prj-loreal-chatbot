@@ -11,4 +11,15 @@ L’Oréal is exploring the power of AI, and your job is to showcase what's poss
 
 When deploying through Cloudflare, make sure your API request body (in `script.js`) includes a `messages` array and handle the response by extracting `data.choices[0].message.content`.
 
+## How to finish the chatbot
+
+1. Open Cloudflare Workers and create a new Worker.
+2. Paste the code from `RESOURCE_cloudflare-worker.js` into the Worker editor.
+3. In the Worker settings, add a secret named `OPENAI_API_KEY` and paste your OpenAI key there.
+4. Deploy the Worker and copy the public URL.
+5. Open `script.js` and replace the placeholder URL with your real Worker URL.
+6. Reload the page and test the chatbot.
+
+If it still fails, check the browser console and the Cloudflare Worker logs to see the exact error message.
+
 Enjoy building your L’Oréal beauty assistant! 💄
