@@ -18,9 +18,14 @@ export default {
     const apiUrl = "https://api.openai.com/v1/chat/completions";
     const userInput = await request.json();
 
+    const systemPrompt = `You are a friendly L'Oréal beauty assistant. Help users with skincare routines, product recommendations, and general beauty advice. Use emojis to make the conversation warm and engaging. Keep responses concise, helpful, and natural. Reply in plain text only. If a user asks about anything unrelated to L'Oréal products, beauty routines, skincare, makeup, haircare, or general beauty topics, politely refuse and redirect the conversation back to beauty-related help. Do not answer unrelated questions.`;
+
     const requestBody = {
       model: "gpt-4.1",
-      messages: userInput.messages,
+      messages: [
+        { role: "system", content: systemPrompt },
+        ...userInput.messages,
+      ],
       max_completion_tokens: 300,
     };
 

@@ -5,7 +5,7 @@ const chatWindow = document.getElementById("chatWindow");
 const sendButton = document.getElementById("sendBtn");
 
 // Replace this with your actual Cloudflare Worker URL.
-const workerUrl = "https://YOUR-WORKER-NAME.your-subdomain.workers.dev/";
+const workerUrl = "https://plain-feather-a209.hua-wu.workers.dev/";
 
 // Show a friendly welcome message when the page loads.
 chatWindow.innerHTML = "<p>👋 Hello! How can I help you today?</p>";
